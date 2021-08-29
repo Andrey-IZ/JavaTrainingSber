@@ -1,7 +1,5 @@
 package com.sber.javaschool.hometask2;
 
-import com.sber.javaschool.hometask2.cars_grouping.Car;
-import com.sber.javaschool.hometask2.cars_grouping.CarInitializing;
 import com.sber.javaschool.hometask2.iterators.ReverseListIterator;
 import com.sber.javaschool.hometask2.utils.DataHolder;
 import com.sber.javaschool.hometask2.word_count.WordCounter;
@@ -11,7 +9,6 @@ import java.util.*;
 
 public class MainApp {
     public static void main(String[] args) {
-        cars_grouping();
         Collection<String> lines;
         String fileName = "text.txt";
         try {
@@ -27,30 +24,6 @@ public class MainApp {
         task4(wordCounter.getReversedLines());
         task5(wordCounter.getLines());
         task6(wordCounter);
-    }
-
-    /**
-     * Задача.
-     * Имеется список парка машин Car(String model, String type). Необходимо разбить его на списки
-     * сгруппированные по type.
-     * Пример исходного списка: Лада седан, Лада хэтчбек, Мерседес седан, Бмв кроссовер, Форд хэтчбек,
-     * Пежо кроссовер, Тойота седан и т.п.
-     */
-    private static void cars_grouping() {
-        List<Car> cars = new ArrayList<>();
-        CarInitializing.init(cars);
-
-//        var hm = cars.stream().collect(Collectors.groupingBy(Car::getType));
-//        System.out.println(hm);
-
-        HashMap<String, List<Car>> groupList = new HashMap<>();
-        for (Car car : cars) {
-            var key = car.getType();
-            var list = groupList.getOrDefault(key, new ArrayList<>());
-            list.add(car);
-            groupList.put(key, list);
-        }
-        System.out.println(groupList);
     }
 
     /**
