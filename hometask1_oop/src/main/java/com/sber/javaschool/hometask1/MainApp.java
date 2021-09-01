@@ -4,10 +4,7 @@ import com.sber.javaschool.hometask1.array_utilities.ArrayManager;
 import com.sber.javaschool.hometask1.converters.Temperatures;
 import com.sber.javaschool.hometask1.hierarchy.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -25,6 +22,11 @@ public class MainApp {
      * @param count количество раундов тестового прогона
      */
     private static void task1_algorithms(int from, int to, int count) {
+        if (to - from < 0) {
+            System.out.println("Error: Max больше min");
+            return;
+        }
+
         var list = new ArrayList<Integer>(count);
         for (int i = from; i <= to; i++) list.add(i);
         Collections.shuffle(list);
@@ -39,14 +41,15 @@ public class MainApp {
         System.out.println(" --- Бинарный поиск ---");
         for (int round = 0; round < 5; round++) {
             System.out.println("Попытка: " + (round + 1));
-            int index = rand.nextInt(to) + from;
+            int index = rand.nextInt(to - from) + from;
             long startTime = System.nanoTime();
             int result = ArrayManager.binarySearch(array, array[index]);
             long stopTime = System.nanoTime();
             if (result < 0 || index != result) {
                 System.out.println("Элемент не найден");
             } else {
-                System.out.printf("Элемент %d найден по индексу %d за время %s мкс. %n", array[index], result, stopTime - startTime);
+                System.out.printf("Элемент %d найден по индексу %d за время %s мкс. %n",
+                        array[index], result, stopTime - startTime);
             }
         }
     }
