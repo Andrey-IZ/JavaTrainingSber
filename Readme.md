@@ -15,5 +15,5 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 ## 3. Generics ##
 
-* [CountMap implementation]()
-* [Collection utils]()
+* [Parametrize CountMap](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask3_generics/src/main/java/com/sber/javaschool/hometask3/countmap/CountMapImpl.java)
+* [Parametrize Collection utils with PECS](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask3_generics/src/main/java/com/sber/javaschool/hometask3/pecs/CollectionUtils.java)
