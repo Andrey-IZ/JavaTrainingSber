@@ -12,3 +12,8 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 * [There is a list of car(string model, string type). Grouping it by type](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask2_collections/src/main/java/com/sber/javaschool/hometask2/cars_grouping/App.java)
 * [Working with collections](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask2_collections/src/main/java/com/sber/javaschool/hometask2/MainApp.java)
+
+## 3. Generics ##
+
+* [CountMap implementation]()
+* [Collection utils]()

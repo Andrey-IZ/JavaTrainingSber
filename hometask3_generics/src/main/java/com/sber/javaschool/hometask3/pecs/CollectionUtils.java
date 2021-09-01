@@ -3,7 +3,6 @@ package com.sber.javaschool.hometask3.pecs;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Параметризовать методы, используя правило PECS, и реализовать их
@@ -23,13 +22,13 @@ public class CollectionUtils {
 
     public static <T> List<? super T> limit(List<? extends T> source, int size) {
 //        return source.stream().limit(size).collect(Collectors.toList());
-        var list = newArrayList();
-        AtomicInteger limitSize = new AtomicInteger(size);
-        source.forEach(t -> {
-            if (limitSize.getAndDecrement() > 0) {
-                list.add(t);
+        List<T> list = newArrayList();
+        for (T t : source) {
+            if (size-- == 0) {
+                break;
             }
-        });
+            list.add(t);
+        }
         return list;
     }
 
@@ -73,7 +72,7 @@ public class CollectionUtils {
                 rangeList.add(t);
             }
         }
-
+        rangeList.sort(Comparator.naturalOrder());
         return rangeList;
     }
 
@@ -90,6 +89,7 @@ public class CollectionUtils {
                 rangeList.add(t);
             }
         }
+        rangeList.sort(c);
         return rangeList;
     }
 }
