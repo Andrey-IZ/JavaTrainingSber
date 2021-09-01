@@ -12,6 +12,7 @@
         <module>hometask1_oop</module>
         <module>hometask2_collections</module>
         <module>hometask3_generics</module>
+        <module>hometask4_exceptions</module>
     </modules>
 
     <properties>
