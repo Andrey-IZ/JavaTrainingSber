@@ -13,6 +13,7 @@
         <module>hometask2_collections</module>
         <module>hometask3_generics</module>
         <module>hometask4_exceptions</module>
+        <module>hometask5_reflection_annotations</module>
     </modules>
 
     <properties>
