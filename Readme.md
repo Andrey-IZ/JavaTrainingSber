@@ -18,11 +18,11 @@ This is a list of links and short description for every task of the Sber Java Sc
 * [Parametrize CountMap](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask3_generics/src/main/java/com/sber/javaschool/hometask3/countmap/CountMapImpl.java)
 * [Parametrize Collection utils with PECS](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask3_generics/src/main/java/com/sber/javaschool/hometask3/pecs/CollectionUtils.java)
 
-## 4. - Exception handling ##
+## 4. Exception handling ##
 
 * [!Work In Progress!]()
 
-## 5 - Reflection, Proxy, Annotations ##
+## 5. Reflection, Proxy, Annotations ##
 
 * [Test java.lang.reflection features](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask5_reflection_annotations/src/main/java/com/sber/javaschool/hometask5/MainApp.java)
 * [Implement cached and metric proxy](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask5_reflection_annotations/src/main/java/com/sber/javaschool/hometask5/calculator)
