@@ -20,7 +20,8 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 ## 4. Exception handling ##
 
-* [!Work In Progress!]()
+* [Design a bank terminal work](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask4_exceptions/src/main/java/com/sber/javaschool/hometask4/terminal/MainApp.java)
+* [Some tests to approve that terminal works](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask4_exceptions/src/test/java/com/sber/javaschool/hometask4/terminal)
 
 ## 5. Reflection, Proxy, Annotations ##
 
