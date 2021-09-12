@@ -1,13 +1,17 @@
 package com.sber.javaschool.hometask6;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
 
 class MyIteratorTest {
     private MyIterator<String> myIterator;
@@ -174,5 +178,16 @@ class MyIteratorTest {
         myIterator.toFront();
         assertTrue(myIterator.hasNext());
         assertEquals("1", myIterator.next());
+    }
+
+    @Disabled("This is just to show how to use Mockito")
+    @Test
+    void mocking() {
+        MyIterator<String> iterator = spy(myIterator);
+        when(iterator.next()).thenReturn("10");
+        when(iterator.nextIndex()).thenReturn(100);
+        assertEquals("10", iterator.next());
+        assertEquals(100, iterator.nextIndex());
+        verify(iterator, Mockito.times(2));
     }
 }
