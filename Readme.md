@@ -28,3 +28,8 @@ This is a list of links and short description for every task of the Sber Java Sc
 * [Test java.lang.reflection features](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask5_reflection_annotations/src/main/java/com/sber/javaschool/hometask5/MainApp.java)
 * [Implement cached and metric proxy](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask5_reflection_annotations/src/main/java/com/sber/javaschool/hometask5/calculator)
 * [Implement BeanUtils](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask5_reflection_annotations/src/main/java/com/sber/javaschool/hometask5/BeanUtils.java)
+
+## 6. Module. Build tools. Testing ##
+
+* [Make a custom iterator and cover with tests](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask6_testing_build_tools/src/main/java/com/sber/javaschool/hometask6/MyIterator.java)
+* [Design a social network](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask6_testing_build_tools/social_network)
