@@ -3,7 +3,6 @@ package com.sber.javaschool.hometask5.calculator.cache;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -27,17 +26,15 @@ public class LRUCacheExt<K, V> {
 //            cacheMap.put(cacheType, lruCache);
     }
 
-    public boolean saveToFile(String fileName) {
+    public void saveToFile(String fileName) {
         if (cacheMap.get(CacheType.FILE).isEmpty()) {
-            return false;
+            return;
         }
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
             stream.writeObject(cacheMap.get(CacheType.FILE));
         } catch (IOException e) {
             System.out.println("The writing to cache file hasn't been completed" + e);
-            return false;
         }
-        return true;
     }
 
     public boolean loadFromFile(String fileName) {
@@ -45,6 +42,7 @@ public class LRUCacheExt<K, V> {
             return false;
         }
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(fileName))) {
+            //noinspection unchecked
             LRUCache<K, V> lruCache = (LRUCache<K, V>) inputStream.readObject();
             if (lruCache != null) {
                 cacheMap.replaceAll((t, v) -> lruCache);
