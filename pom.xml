@@ -15,6 +15,7 @@
         <module>hometask4_exceptions</module>
         <module>hometask5_reflection_annotations</module>
         <module>hometask6_testing_build_tools</module>
+        <module>hometask7_classloaders</module>
     </modules>
 
     <properties>
