@@ -33,3 +33,8 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 * [Make a custom iterator and cover with tests](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask6_testing_build_tools/src/main/java/com/sber/javaschool/hometask6/MyIterator.java)
 * [Design a social network](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask6_testing_build_tools/social_network)
+
+## 7. Classloaders ##
+
+[Create loader of plugins and EncryptedClassloader](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask7_classloaders/src/main/java/com/sber/javaschool/hometask7)
+
