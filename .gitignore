@@ -38,3 +38,5 @@ atlassian-ide-plugin.xml
 
 target/
 log/
+
+/.idea/inspectionProfiles/Project_Default.xml
