@@ -36,5 +36,8 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 ## 7. Classloaders ##
 
-[Create loader of plugins and EncryptedClassloader](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask7_classloaders/src/main/java/com/sber/javaschool/hometask7)
+* [Create loader of plugins and EncryptedClassloader](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask7_classloaders/src/main/java/com/sber/javaschool/hometask7)
 
+## 8. Serialization ##
+
+* [Create advenced cached proxy](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask8_serialization/src/main/java/com/sber/javaschool/hometask8)
