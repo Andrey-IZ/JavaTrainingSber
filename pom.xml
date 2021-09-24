@@ -17,6 +17,7 @@
         <module>hometask6_testing_build_tools</module>
         <module>hometask7_classloaders</module>
         <module>hometask8_serialization</module>
+        <module>hometask9_lambda_stream_api</module>
     </modules>
 
     <properties>
