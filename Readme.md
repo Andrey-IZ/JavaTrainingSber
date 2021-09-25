@@ -45,3 +45,7 @@ This is a list of links and short description for every task of the Sber Java Sc
 ## 9. Lambda. Stream API ##
 
 * [Make custom Stream class](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask9_lambda_stream_api/src/main/java/com/sber/javaschool/hometask9/Streams.java)
+
+## 10. Multithreading Part1 ##
+
+* [Calculate factorial using multithreading](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask10_multithreading1/src/main/java/com/sber/javaschool/hometask10/MainApp.java)
