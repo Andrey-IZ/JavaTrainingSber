@@ -41,3 +41,7 @@ This is a list of links and short description for every task of the Sber Java Sc
 ## 8. Serialization ##
 
 * [Create advanced cached proxy](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask8_serialization/src/main/java/com/sber/javaschool/hometask8)
+
+## 9. Lambda. Stream API ##
+
+* [Make custom Stream class](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask9_lambda_stream_api/src/main/java/com/sber/javaschool/hometask9/Streams.java)
