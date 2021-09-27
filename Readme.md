@@ -49,3 +49,8 @@ This is a list of links and short description for every task of the Sber Java Sc
 ## 10. Multithreading Part1 ##
 
 * [Calculate factorial using multithreading](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask10_multithreading1/src/main/java/com/sber/javaschool/hometask10/MainApp.java)
+
+## 11. Multithreading Part2 ## 
+
+* [Create ThreadPool with fixed amount of threads](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask11_multithreading2/src/main/java/com/sber/javaschool/hometask11/FixedThreadPool.java)
+* [Create ThreadPool with min and max threads](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask11_multithreading2/src/main/java/com/sber/javaschool/hometask11/ScalableThreadPool.java)
