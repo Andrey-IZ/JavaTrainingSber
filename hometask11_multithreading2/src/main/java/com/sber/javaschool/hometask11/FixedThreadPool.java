@@ -28,9 +28,9 @@ public class FixedThreadPool implements ThreadPool {
 
     @Override
     public void execute(Runnable task) {
-        taskQueue.add(task);
         isRunning = true;
         synchronized (taskQueue) {
+            taskQueue.add(task);
             taskQueue.notifyAll();
         }
     }
