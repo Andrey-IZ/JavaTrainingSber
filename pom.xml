@@ -20,6 +20,7 @@
         <module>hometask9_lambda_stream_api</module>
         <module>hometask10_multithreading1</module>
         <module>hometask11_multithreading2</module>
+        <module>hometask12_jmm</module>
     </modules>
 
     <properties>
