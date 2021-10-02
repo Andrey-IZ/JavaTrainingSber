@@ -22,8 +22,6 @@ import java.util.concurrent.Callable;
  */
 public class Task<T> {
     private final Callable<? extends T> callable;
-    //    private ConcurrentHashMap<Callable<? extends T>, T> cache = new ConcurrentHashMap<>();
-//    private ConcurrentHashMap<Callable<? extends T>, TaskException> cacheFailedResult = new ConcurrentHashMap<>();
     private volatile T result = null;
     private volatile TaskException resultAborted = null;
 
@@ -54,22 +52,5 @@ public class Task<T> {
             }
         }
         return result;
-//        if (cache.containsKey(callable)) {
-//            return cache.get(callable);
-//        }
-//        if (cacheFailedResult.containsKey(callable)) {
-//            throw cacheFailedResult.get(callable);
-//        }
-//        synchronized (this) {
-//            if (!cache.containsKey(callable)) {
-//                try {
-//                    cache.put(callable, callable.call());
-//                } catch (Exception e) {
-//                    cacheFailedResult.put(callable, new TaskException("It's been thrown exception: " + e.getMessage()));
-//                    throw cacheFailedResult.get(callable);
-//                }
-//            }
-//        }
-//        return cache.get(callable);
     }
 }
