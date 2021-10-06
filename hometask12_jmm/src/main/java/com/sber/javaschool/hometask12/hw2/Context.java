@@ -1,5 +1,7 @@
 package com.sber.javaschool.hometask12.hw2;
 
+import java.util.concurrent.Future;
+
 public interface Context {
     /**
      * @return - количество тасков, которые на текущий момент успешно выполнились
@@ -26,4 +28,8 @@ public interface Context {
      */
     boolean isFinished();
 
+    /**
+     * Add the running tasks
+     */
+    void add(Future<?> future);
 }

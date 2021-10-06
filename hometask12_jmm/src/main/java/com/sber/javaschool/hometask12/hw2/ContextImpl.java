@@ -1,5 +1,6 @@
 package com.sber.javaschool.hometask12.hw2;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -7,11 +8,11 @@ public class ContextImpl implements Context {
 
     private volatile int completedTaskCount;
     private volatile int failedTaskCount;
+    private volatile int interruptedCount;
     private volatile boolean isInterrupted;
-    private List<? extends Future<?>> futures;
+    private final List<Future<?>> futures = new ArrayList<>();
 
-    public ContextImpl(List<? extends Future<?>> futures) {
-        this.futures = futures;
+    public ContextImpl() {
     }
 
     public synchronized void setCompletedTaskCount() {
@@ -34,22 +35,24 @@ public class ContextImpl implements Context {
 
     @Override
     public int getInterruptedTaskCount() {
-        if (isInterrupted()) {
-            return futures.size() - getCompletedTaskCount() - getFailedTaskCount();
-        }
-        return 0;
+        return interruptedCount;
     }
 
     @Override
-    public void interrupt() {
+    public synchronized void interrupt() {
         setInterrupted(true);
         futures.forEach(future -> future.cancel(false));
+        interruptedCount = (int) futures.stream().filter(Future::isCancelled).count();
     }
 
     @Override
     public boolean isFinished() {
-        return getCompletedTaskCount() == futures.size()
-                || getInterruptedTaskCount() == futures.size();
+        return getCompletedTaskCount() + getInterruptedTaskCount() == futures.size();
+    }
+
+    @Override
+    public void add(Future<?> future) {
+        futures.add(future);
     }
 
     public boolean isInterrupted() {

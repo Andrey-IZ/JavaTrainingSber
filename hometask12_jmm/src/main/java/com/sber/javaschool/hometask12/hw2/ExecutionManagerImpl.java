@@ -3,11 +3,10 @@ package com.sber.javaschool.hometask12.hw2;
 import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
 
 public class ExecutionManagerImpl implements ExecutionManager {
     private ExecutorService pool;
-    private ContextImpl context;
+    private volatile ContextImpl context;
     private final int threadCount;
 
     public ExecutionManagerImpl(int threadCount) {
@@ -17,8 +16,9 @@ public class ExecutionManagerImpl implements ExecutionManager {
     @Override
     public Context execute(Runnable callback, Runnable... tasks) {
         pool = Executors.newFixedThreadPool(threadCount);
+        context = new ContextImpl();
 
-        var futures = Arrays.stream(tasks).map(task -> (Runnable) () -> {
+        Arrays.stream(tasks).map(task -> (Runnable) () -> {
             try {
                 task.run();
             } catch (Exception e) {
@@ -26,8 +26,7 @@ public class ExecutionManagerImpl implements ExecutionManager {
             } finally {
                 context.setCompletedTaskCount();
             }
-        }).map(pool::submit).collect(Collectors.toList());
-        context = new ContextImpl(futures);
+        }).map(pool::submit).forEach(context::add);
 
         Runnable runnable = () -> {
             // Wait for everything to finish.
