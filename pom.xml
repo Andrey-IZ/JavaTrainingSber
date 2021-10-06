@@ -21,6 +21,7 @@
         <module>hometask10_multithreading1</module>
         <module>hometask11_multithreading2</module>
         <module>hometask12_jmm</module>
+        <module>hometask13_jit_gc</module>
     </modules>
 
     <properties>
