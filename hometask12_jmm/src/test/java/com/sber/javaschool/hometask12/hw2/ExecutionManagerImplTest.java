@@ -19,7 +19,7 @@ class ExecutionManagerImplTest {
     }
 
     @Test
-    void execute_test() {
+    void execute_test() throws InterruptedException {
         AtomicBoolean hasCompleted = new AtomicBoolean(false);
         AtomicInteger taskCompleted = new AtomicInteger();
         Runnable callback = () -> hasCompleted.set(true);
@@ -32,7 +32,7 @@ class ExecutionManagerImplTest {
             }
             taskCompleted.incrementAndGet();
         });
-        ExecutionManager manager = new ExecutionManagerImpl(2);
+        ExecutionManager manager = new ExecutionManagerImpl(10);
         Context context = manager.execute(callback, tasks);
         assertTimeout(Duration.ofMillis(1000), () -> {
             while (!context.isFinished()) {
@@ -40,12 +40,13 @@ class ExecutionManagerImplTest {
             }
         });
         assertTrue(context.isFinished());
+        Thread.sleep(10);
         assertTrue(hasCompleted.get());
         assertEquals(threadAmount, context.getCompletedTaskCount());
     }
 
     @Test
-    void execute_failed_tasks_test() {
+    void execute_failed_tasks_test() throws InterruptedException {
         AtomicBoolean hasCompleted = new AtomicBoolean(false);
         AtomicInteger taskCompleted = new AtomicInteger();
         Runnable callback = () -> hasCompleted.set(true);
@@ -59,7 +60,7 @@ class ExecutionManagerImplTest {
             } else {
                 tasks[i] = () -> {
                     try {
-                        TimeUnit.MILLISECONDS.sleep(1);
+                        TimeUnit.MILLISECONDS.sleep(500);
                     } catch (InterruptedException ignore) {
                     }
                 };
@@ -69,12 +70,13 @@ class ExecutionManagerImplTest {
 
         ExecutionManager manager = new ExecutionManagerImpl(2);
         Context context = manager.execute(callback, tasks);
-        assertTimeout(Duration.ofMillis(1000), () -> {
+        assertTimeout(Duration.ofMillis(500 * 10 + 3000), () -> {
             while (!context.isFinished()) {
                 Thread.yield();
             }
         });
         assertTrue(context.isFinished());
+        Thread.sleep(10);
         assertTrue(hasCompleted.get());
         assertEquals(1, context.getFailedTaskCount());
         assertEquals(threadAmount, context.getCompletedTaskCount());
@@ -82,7 +84,35 @@ class ExecutionManagerImplTest {
     }
 
     @Test
-    void execute_with_interruption() {
+    void execute_with_interruption() throws InterruptedException {
+        AtomicBoolean hasCompleted = new AtomicBoolean(false);
+        AtomicInteger taskCompleted = new AtomicInteger();
+        Runnable callback = () -> hasCompleted.set(true);
+        int threadAmount = 10;
+        Runnable[] tasks = new Runnable[threadAmount];
+        for (int i = 0; i < tasks.length; i++) {
+            int finalI = i;
+            tasks[i] = () -> {
+                try {
+                    var anticipatingTime = 1;
+                    if (finalI % 5 == 0) anticipatingTime = 10000;
+                    TimeUnit.MILLISECONDS.sleep(anticipatingTime);
+                } catch (InterruptedException ignore) {
+                }
+            };
+            taskCompleted.incrementAndGet();
+        }
 
+        ExecutionManager manager = new ExecutionManagerImpl(2);
+        Context context = manager.execute(callback, tasks);
+        Thread.sleep(2000);
+        context.interrupt();
+        assertTrue(context.isFinished());
+        Thread.sleep(10);
+        assertTrue(hasCompleted.get());
+        assertEquals(0, context.getFailedTaskCount());
+        assertTrue(context.getCompletedTaskCount() >= 2);
+        assertTrue(context.getInterruptedTaskCount() >= 2);
+        assertEquals(threadAmount, taskCompleted.get());
     }
 }
