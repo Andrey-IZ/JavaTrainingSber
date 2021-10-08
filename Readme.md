@@ -54,3 +54,8 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 * [Create ThreadPool with fixed amount of threads](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask11_multithreading2/src/main/java/com/sber/javaschool/hometask11/FixedThreadPool.java)
 * [Create ThreadPool with min and max threads](https://github.com/Andrey-IZ/JavaTrainingSber/blob/main/hometask11_multithreading2/src/main/java/com/sber/javaschool/hometask11/ScalableThreadPool.java)
+
+## 12. Java Memory Model ##
+
+* [Realize Task's get method](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask12_jmm/src/main/java/com/sber/javaschool/hometask12/hw1)
+* [Implement Execution Manager](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask12_jmm/src/main/java/com/sber/javaschool/hometask12/hw2)
