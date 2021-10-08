@@ -59,3 +59,7 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 * [Realize Task's get method](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask12_jmm/src/main/java/com/sber/javaschool/hometask12/hw1)
 * [Implement Execution Manager](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask12_jmm/src/main/java/com/sber/javaschool/hometask12/hw2)
+
+## 13. JIT. Garbage collectors ##
+
+* [Make researching with JVisualVM](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask13_jit_gc/src/main/java/com/sber/javaschool/hometask13)
