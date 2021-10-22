@@ -23,6 +23,7 @@
         <module>hometask12_jmm</module>
         <module>hometask13_jit_gc</module>
         <module>hometask14_java.util.concurrent</module>
+        <module>hometask15_gof</module>
     </modules>
 
     <properties>
