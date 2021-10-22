@@ -43,13 +43,13 @@ class ServiceImplTest {
         }).when(serializer).save(any(Map.class), eq(cacheName), eq(false));
 
         service.doHardWorkInMemory("I'm working", 1);
-        verify(serializer, times(1)).load(cacheName, false);
-        verify(serializer, times(1)).save(any(), eq(cacheName), eq(false));
+        verify(serializer, never()).load(cacheName, false);
+        verify(serializer, never()).save(any(), eq(cacheName), eq(false));
 
         service.doHardWorkInMemory("I'm working", 1);
-        verify(serializer, times(2)).load(cacheName, false);
+        verify(serializer, never()).load(cacheName, false);
         // it shouldn't call save one more time
-        verify(serializer, times(1)).save(any(), anyString(), anyBoolean());
+        verify(serializer, never()).save(any(), anyString(), anyBoolean());
     }
 
     @Test
