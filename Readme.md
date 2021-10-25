@@ -62,4 +62,14 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 ## 13. JIT. Garbage collectors ##
 
-* [Make researching with JVisualVM](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask13_jit_gc/src/main/java/com/sber/javaschool/hometask13)
+* [Make researchin with JVisualVM](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask13_jit_gc/src/main/java/com/sber/javaschool/hometask13)
+
+## 14. java.util.concurrent ##
+
+*[Make CachedProxy concurrent](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask14_java.util.concurrent/src/main/java/com/sber/javaschool/hometask14)
+
+## 15. GOF. SOLID ##
+
+*[Refactor](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask15_gof/src/main/java/com/sber/javaschool/hometask15)
+
+
