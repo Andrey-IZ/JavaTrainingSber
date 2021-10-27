@@ -24,6 +24,7 @@
         <module>hometask13_jit_gc</module>
         <module>hometask14_java.util.concurrent</module>
         <module>hometask15_gof</module>
+        <module>hometask16_jdbc</module>
     </modules>
 
     <properties>
