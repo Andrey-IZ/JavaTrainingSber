@@ -72,4 +72,6 @@ This is a list of links and short description for every task of the Sber Java Sc
 
 *[Refactor](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask15_gof/src/main/java/com/sber/javaschool/hometask15)
 
+## 16. JDBC
 
+*[Make cached proxy, that is able to save data after a reboot](https://github.com/Andrey-IZ/JavaTrainingSber/tree/main/hometask16_jdbc/src/main/java/com/sber/javaschool/hometask16)
